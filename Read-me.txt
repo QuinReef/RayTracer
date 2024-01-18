@@ -1,0 +1,86 @@
+﻿RAYTRACER BOUCHER, LUCAS & REEF, QUIN;
+STUDENTNM: 7927878 & 2565889 resp.
+
+A statement about what minimum requirements and bonus assignments you have implemented (if any) and information that is needed to grade them, including detailed information on your implementation.[We will not search for special features in your code. If we can’t find and understand them easily, they maynot be graded, so make sure your description and/or comments are clear.]
+
+Minimum requirements met:
+
+CAMERA
+	-Camera can support a arbitrary field of view:
+	-FOV angle can be set in
+	Application: camera = new Camera(new Vector3(0, 0, 0), new Vector3(0, 0, 1), new Vector3(1, 0, 0), new Vector3(0, 1, 0), 45, window);
+	where 45 is degrees.
+	-Camera can support all positions and orientations, see controls
+
+PRIMITIVES
+	-Support for spheres and planes, scene is flexible see controls X and Z
+
+LIGHTS
+	- Raytracer can support arbitrary number of point lights and their shadows
+
+MATERIALS
+	- Diffuse, Mirrors and Specular materials are implemented where the recursive
+	cap of the mirror is adjustable in Raytracer: const int TRESHOLD = 2;
+	- A single plane can be textured using a mathematical texturing.
+
+APPLICATION
+	-Keyboard can be used to navigate and pan camera see Controls.
+
+DEBUG OUTPUT
+	- It shows the circle primitives and primary, secundary and shadow rays
+
+EXTRA REQUIREMENTS MET:
+	-Added triangle support (0.5) Special scene made for demonstration, use Z and X to switch scenes
+	-Added spotlights	(0.5) Special scene made for demonstration, use Z and X to switch scenes
+	-Added Multithreading 	(0.5) note that this does not work in combination with texture mapping or the skybox 
+	-Added AntiAliasing 	(0.5), Samples can be increased with I, decreased with U.
+	-Added Skybox 		(1) , can be enable when multithreading is disabled with "B"
+	-Added texturing to all required primitives (Spheres and Planes) (1)
+
+Controls:
+
+	Movement (in terms of viewdirection): 
+		W: Forwards
+		S: Backwards
+		D: Right
+		A: Left
+		E: Down
+		Q: Up
+	Panning (Arrows):
+		UP:		Up
+		DOWN:	Down
+		LEFT:	Left 
+		RIGHT:	Right
+	Other features:
+		B: Enable environment box(Bonus)
+		V: Switch from and to debug view
+		P: Terminate program
+		F: Change FOV
+		I: Increase sampling of antialaising
+		U: Decrease sampling of antialaising
+		R: Increase debug rays
+		T: Decrease debug rays
+		Y: Enable multithreading
+		X: Next scene
+		Z: Previous scene
+
+
+
+NOTE YOU MAY NEED TO SWITCH TO ANOTHER RESOLUTION FOR FASTER RENDERING
+-HD
+-HD ready
+-HALF HD in the application class (SWITCH THE NAME)
+ALSO: The first time pressing X does not work. Please press 2x.
+
+application = new Application(HDready, this); -> application = new Application(HD, this);
+
+Code Inspirations:
+
+https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-rendering-a-triangle/geometry-of-a-triangle
+Used for triangle calculations
+
+https://www.lighthouse3d.com/tutorials/maths/ray-sphere-intersection/
+Used for the sphere intersection specifically for the intersection when a origin is inside the sphere
+
+
+
